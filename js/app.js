@@ -116,9 +116,6 @@ new Vue({
     },
     components:{counter, message, form_user},
     methods:{
-        submit () {
-            this.user
-        },
         show_alert () {
             this.alert = true;
         },

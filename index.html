@@ -17,27 +17,32 @@
     </div>
 
     <div class="main container" id="app">
-        <input type="checkbox" v-model="success">
+        <!-- <input type="checkbox" v-model="success">
         <a :href="link" :title="link + '/tutoriels'">So easy link</a>
         <div class="ui message" :class="cls">
             <i class="close icon" @click="close"></i>
-            <p>{{ message }}</p>
-        </div>
+            <p>{{ another_message }}</p>
+        </div> -->
         <!-- <div class="ui error message" v-else="success">
             <p>Sorry, that does not work.</p>
         </div> -->
-        <message> </message>
-        <ul>
+        <message type="success" message='Vue JS 2 Tutoriel' header="Attention" v-if="alert" @close="hide_alert"> </message>
+        <button @click="show_alert" v-if="!alert">Alert...</button>
+        <counter> </counter>
+        <counter :start=3> </counter>
+        <form_user v-model="user"></form_user>
+        {{ user }}
+        <!-- <ul>
             <li v-for="person in persons">{{ person }}</li>
-        </ul>
-        <!-- <input type="checkbox" v-model="counter">
+        </ul> -->
+        <!-- <input type="checkbox" v-model="count">
         <h2  :style="style()">{{ seconds }}</h2> -->
         
-        <p>
+        <!-- <p>
             Firstname: {{ firstname }} <br>
             Lastname: {{ lastname }} <br>
             Fullname: <input type="text" v-model="fullname">
-        </p>
+        </p> -->
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js" integrity="sha512-PyKhbAWS+VlTWXjk/36s5hJmUJBxcGY/1hlxg6woHD/EONP2fawZRKmvHdTGOWPKTqk3CPSUPh7+2boIBklbvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

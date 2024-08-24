@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <style>
+        .main.container{
+            padding-top: 50px;
+        };
+    </style>
+</head>
+<body>
+    <div class="ui inverted fixed menu">
+        <div class="header item">Tutoriel</div>
+    </div>
+
+    <div class="main container" id="app">
+        <input type="checkbox" v-model="success">
+        <a :href="link" :title="link + '/tutoriels'">So easy link</a>
+        <div class="ui message" :class="cls">
+            <i class="close icon" @click="close"></i>
+            <p>{{ message }}</p>
+        </div>
+        <!-- <div class="ui error message" v-else="success">
+            <p>Sorry, that does not work.</p>
+        </div> -->
+        <message> </message>
+        <ul>
+            <li v-for="person in persons">{{ person }}</li>
+        </ul>
+        <!-- <input type="checkbox" v-model="counter">
+        <h2  :style="style()">{{ seconds }}</h2> -->
+        
+        <p>
+            Firstname: {{ firstname }} <br>
+            Lastname: {{ lastname }} <br>
+            Fullname: <input type="text" v-model="fullname">
+        </p>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js" integrity="sha512-PyKhbAWS+VlTWXjk/36s5hJmUJBxcGY/1hlxg6woHD/EONP2fawZRKmvHdTGOWPKTqk3CPSUPh7+2boIBklbvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -6,9 +6,13 @@
     
     <p>My games list: </p>
     <ul>
-      <li v-for="movie in movies">{{ movie }} 
-        <button @click="delete_movie(movie)">Delete it</button></li>
+      <li v-for="game in games" :key="game">{{ game }} 
+        <button @click="delete_movie(game)">Delete it</button></li>
     </ul>
+    <form action="" @submit.prevent="add_game">
+      <input type="text" placeholder="Add a game" v-model="new_game">
+      <button type="submit"> Add game</button>
+    </form>
   </template>
   
   <script setup>
@@ -16,11 +20,12 @@
     const count = ref(0);
     const alert = ref(false);
     const number_of_click = ref(0);
-    const movies = ref([
+    const games = ref([
       'Naruto Storm',
       'Devil may cry',
       'Chess'
     ]);
+    const new_game = ref('');
     const increment = function () {
       count.value++;
       number_of_click.value++;
@@ -35,8 +40,14 @@
         alert.value = true;
       }
     }
-    const delete_movie = function (movie) {
-      movies.value = movies.value.filter(m => m != movie)
+    const delete_movie = function (game) {
+      games.value = games.value.filter(m => m != game)
+    }
+    const add_game = function () {
+      if (new_game.value != '') {
+        games.value.push(new_game.value);
+        new_game.value = '';
+      }
     }
   
   </script>

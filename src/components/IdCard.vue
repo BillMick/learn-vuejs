@@ -30,6 +30,10 @@
                     <td><b>Age:</b></td>
                     <td>{{ age }}</td>
                 </tr>
+                <tr>
+                    <td><b>Civility:</b></td>
+                    <td>{{ civility }}</td>
+                </tr>
                 <tr class="ckeck-it">
                     <td>
                         <input type="checkbox" v-model="verified">
@@ -39,18 +43,21 @@
             </tbody>
         </table>
         <div class="id-image">
-            <img src="../../id_image.png" alt="ID image">
+            <img :src="civility == 'Mr' ? man_image_path : woman_image_path" alt="ID image">
         </div>
     </div>
 </template>
 
 <script setup>
     import { ref } from 'vue';
-
+    const man_image_path = ref("../../images/man.png");
+    const woman_image_path = ref("../../images/woman.png");
     const props = defineProps({
         firstname: {type: String, required: true},
         lastname: {type: String, required: true},
-        age: {type: Number, required: true}
+        age: {type: Number, required: true},
+        civility: {type: String, default: 'Mr'},
+        // image: {type: String, default: "../../images/man.png"}
     });
     const verified = ref(false);
 </script>
@@ -60,6 +67,7 @@
         display:flex;
         margin-left: 100px;
         margin-right: 100px;
+        margin-bottom: 30px;
         border-style: dashed double;
         width: 500px;
     }

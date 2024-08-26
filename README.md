@@ -27,3 +27,9 @@ npm run dev
 ```sh
 npm run build
 ```
+## Views
+You can access three views after launching the dev server:
+- index (default)
+- counter
+- todolist
+

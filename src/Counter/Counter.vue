@@ -15,7 +15,8 @@
     </form>
     <HelloWorld msg="lorem ipsum..."></HelloWorld>
     <IdCard firstname="Bill" lastname="AHOUANDJINOU" age="23"></IdCard>
-    <IdCard firstname="Ramziath Nonsou" lastname="ADAM CHABI" age="22" civility="Miss"></IdCard>
+    <IdCard firstname="Tom" lastname="Cruise" age="52" civility="Mr"></IdCard>
+    <IdCard firstname="Celine" lastname="Dion" age="62" civility="Miss"></IdCard>
 
   </template>
   

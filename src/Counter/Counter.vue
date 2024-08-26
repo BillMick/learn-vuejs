@@ -13,10 +13,15 @@
       <input type="text" placeholder="Add a game" v-model="new_game">
       <button type="submit"> Add game</button>
     </form>
+    <HelloWorld msg="lorem ipsum..."></HelloWorld>
+    <IdCard firstname="Bill" lastname="AHOUANDJINOU" age="23"></IdCard>
+
   </template>
   
   <script setup>
-    import {ref} from 'vue'
+    import {ref} from 'vue';
+    import HelloWorld from '@/components/HelloWorld.vue';
+    import IdCard from '@/components/IdCard.vue';
     const count = ref(0);
     const alert = ref(false);
     const number_of_click = ref(0);
